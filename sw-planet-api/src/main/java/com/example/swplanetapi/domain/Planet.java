@@ -2,11 +2,13 @@ package com.example.swplanetapi.domain;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "planets")
@@ -14,9 +16,20 @@ public class Planet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotEmpty
+    @Column(nullable = false, unique = true)
     private String name;
+
+    @NotEmpty
     private String climate;
+
+    @NotEmpty
     private String terrain;
+
+    public Planet(){
+
+    }
 
     public Planet(String name, String climate, String terrain){
         this.name = name;
