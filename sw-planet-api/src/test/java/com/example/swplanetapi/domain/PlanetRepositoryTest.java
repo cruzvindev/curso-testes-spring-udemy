@@ -12,7 +12,6 @@ import org.springframework.test.context.jdbc.Sql;
 import static com.example.swplanetapi.common.PlanetConstants.TATOOINE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.Mockito.when;
 
 import java.util.List;
 
@@ -132,8 +131,10 @@ public class PlanetRepositoryTest {
         assertThat(removedPlanet).isNull();
     }
 
-    @Test
+    @Test //No spring boot 3.0 pra cima o método deleteById não lança mais essa exception se não encontrar o objeto
     public void removePlanet_WithUnexistingId_ReturnsNotFound(){
-        assertThatThrownBy(() -> planetRepository.deleteById(1L)).isInstanceOf(EmptyResultDataAccessException.class);
+        assertThatThrownBy(() -> planetRepository.deleteById(100L))
+                .isInstanceOf(EmptyResultDataAccessException.class);
     }
+
 }

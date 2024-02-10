@@ -2,13 +2,9 @@ package com.example.swplanetapi.domain;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+
 
 @Entity
 @Table(name = "planets")

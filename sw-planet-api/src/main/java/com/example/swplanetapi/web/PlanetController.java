@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.swplanetapi.domain.Planet;
 import com.example.swplanetapi.domain.PlanetService;
 
-import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.validation.Valid;
 
 
 @RestController
