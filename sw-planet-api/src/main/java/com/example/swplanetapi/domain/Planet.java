@@ -1,5 +1,6 @@
 package com.example.swplanetapi.domain;
 
+import com.example.swplanetapi.jacoco.ExcludeFromJacocoGeneratedReport;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
 import javax.persistence.*;
@@ -74,5 +75,10 @@ public class Planet {
     public boolean equals(Object obj) {
        return EqualsBuilder.reflectionEquals(obj, this);
     }
-    
+
+    @Override
+    @ExcludeFromJacocoGeneratedReport
+    public String toString() {
+        return "Planet [climate" + climate + ", id=" + id + ", name" + name + ", terrain=" + terrain + "]";
+    }
 }
